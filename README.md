@@ -1,41 +1,30 @@
-# voyage-tasks
+# Event planner - AI expert analytics, `infused`
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+... `some more meaningful description will pop-up as App build continues` ~!
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## How to use the project folder
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+The Project has come together with aid of several teammates. Each member works in the directory of their experties; for example:
 
-> Own it & Make it your Own!
+- Developers: will place their work in the `build` folder
+- UI experts: may place their work in the `wireframes` folder or mention links to resources in the `wireframes/README.md` file.
+- Scrum master or any team member will explain the project futher in documentation and place the resources in the `docs` folder.
 
-## Team Documents
+## How to Push and PR
 
-You may find these helpful as you work together to organize your project.
+To make sure the PR flow is more efficient; in your terminal move to the core folder that handles your work, e.g `cd ./build` then make a push request from there.
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
+Here's why, when working in a directory as build, most developers stage their work using the `'git add .'`; this will include all files in that folder & subfolder level. to reduce chances of merge conflict for the git histories, especially for work that you did not instanciate or participate in, then only conduct git operation in the directory that you've worked on.
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
-
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+The GitHub Administrator will lead in management of the remote repository; e.g: Merging reviewing PRs; but once PRs are reviewed, the Admin or code creator can merge the PR.
 
 ## Our Team
 
-Everyone on your team should add their name along with a link to their GitHub
-& optionally their LinkedIn profiles below. Do this in Sprint #1 to validate
-your repo access and to practice PR'ing with your team *before* you start
-coding!
+We are the cookers click on the links to see our potifolio!
 
-- Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Jack `[@Jaweki]`: [GitHub](https://github.com/Jaweki) / [LinkedIn](https://linkedin.com/in/jaweki-dekut)
 - Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 
-   ...
+  ...
+
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
