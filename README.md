@@ -24,7 +24,7 @@ We are the cookers click on the links to see our potifolio!
 
 - Jack `[@Jaweki]`: [GitHub](https://github.com/Jaweki) / [LinkedIn](https://linkedin.com/in/jaweki-dekut)
 - Valeriia: [GitHub](https://github.com/lerkooow) / [LinkedIn](https://linkedin.com/in/valeriia-akh)
-
+- Yusuf Mohsen: [GitHub](https://github.com/yusufmohsiin) / [LinkedIn](https://www.linkedin.com/in/yusuf-mohsiin/)
   ...
 
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
