@@ -1,0 +1,59 @@
+# Decision (default): Perplexity, built-in sample questions
+curl -s -X POST http://localhost:3000/api/ai-api \
+  -H "Content-Type: application/json" \
+  -d '{"input":"I was charged twice and nobody is replying!"}' | jq
+
+# Decision with your own questions
+curl -s -X POST "http://localhost:3000/api/ai-api?use=decision" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "state": "Listing: vintage red bicycle, light scratches on the frame",
+    "questions": {
+      "category": {
+        "type": "choice",
+        "instructions": "Which category fits this listing?",
+        "criteria": {
+          "bikes": "Complete bicycles",
+          "parts": "Components and accessories",
+          "apparel": "Clothing and gear"
+        }
+      },
+      "condition": {
+        "type": "score",
+        "instructions": "How worn is the item?",
+        "criteria": ["Like new", "Light wear", "Heavy wear"]
+      }
+    }
+  }' | jq '.answers'
+
+# Decision with an image (state is an array, same as the Perplexity example)
+IMG=$(base64 -w0 image.png)
+curl -s -X POST "http://localhost:3000/api/ai-api?use=decision" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"state\": [\"Listing: vintage red bicycle\", {\"type\":\"image_url\",\"image_url\":{\"url\":\"data:image/png;base64,$IMG\"}}],
+    \"questions\": {\"matches_listing\": {\"type\":\"noul\",\"instructions\":\"Does the media show the listed item?\",\"criteria\":{\"true\":\"The listed item is shown\",\"false\":\"Something else or nothing is shown\"}}}
+  }" | jq '.answers'
+
+# Chat: Nvidia with reasoning
+curl -s -X POST "http://localhost:3000/api/ai-api?use=chat" \
+  -H "Content-Type: application/json" \
+  -d '{"input":"How many r'"'"'s are in the word strawberry?"}' | jq -r .output
+
+# Chat follow-up that preserves reasoning_details
+FIRST=$(curl -s -X POST "http://localhost:3000/api/ai-api?use=chat" \
+  -H "Content-Type: application/json" \
+  -d '{"input":"How many r'"'"'s are in the word strawberry?"}')
+
+curl -s -X POST "http://localhost:3000/api/ai-api?use=chat" \
+  -H "Content-Type: application/json" \
+  -d "$(jq -n --argjson a "$(echo "$FIRST" | jq .assistant_message)" '{
+    messages: [
+      {role:"user", content:"How many r'"'"'s are in the word strawberry?"},
+      $a,
+      {role:"user", content:"Are you sure? Think carefully."}
+    ]}')" | jq -r .output
+
+# GET shortcut
+curl -s -G http://localhost:3000/api/ai-api \
+  --data-urlencode "use=chat" --data-urlencode "q=Hello" | jq

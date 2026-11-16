@@ -26,6 +26,4 @@ We are the cookers click on the links to see our potifolio!
 - Valeriia: [GitHub](https://github.com/lerkooow) / [LinkedIn](https://linkedin.com/in/valeriia-akh)
 - Yusuf Mohsen: [GitHub](https://github.com/yusufmohsiin) / [LinkedIn](https://www.linkedin.com/in/yusuf-mohsiin/)
 - Kachi: [GitHub](https://github.com/donkachii) / [LinkedIn](https://www.linkedin.com/in/onyekachi-nwakaihe/)
-  ...
-
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Tonia Montgomery: [GitHub](https://github.com/MontgomeryT7294)
