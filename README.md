@@ -23,8 +23,7 @@ The GitHub Administrator will lead in management of the remote repository; e.g: 
 We are the cookers click on the links to see our potifolio!
 
 - Jack `[@Jaweki]`: [GitHub](https://github.com/Jaweki) / [LinkedIn](https://linkedin.com/in/jaweki-dekut)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-
-  ...
-
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Valeriia: [GitHub](https://github.com/lerkooow) / [LinkedIn](https://linkedin.com/in/valeriia-akh)
+- Yusuf Mohsen: [GitHub](https://github.com/yusufmohsiin) / [LinkedIn](https://www.linkedin.com/in/yusuf-mohsiin/)
+- Kachi: [GitHub](https://github.com/donkachii) / [LinkedIn](https://www.linkedin.com/in/onyekachi-nwakaihe/)
+- Tonia Montgomery: [GitHub](https://github.com/MontgomeryT7294)
