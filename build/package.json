@@ -10,7 +10,7 @@
     "postinstall": "prisma generate"
   },
   "prisma": {
-    "schema": "lib/db/schema.prisma"
+    "schema": "src/lib/db/schema.prisma"
   },
   "dependencies": {
     "better-auth": "^1.7.27",
