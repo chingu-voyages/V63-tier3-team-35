@@ -83,17 +83,22 @@ model Event {
   @@index([organizationId, date])
 }
 
+model User {
+  id               String       @id @default(uuid())
+  fullName         String
+  email            String?
+  city             String?
+  company          String?
+}
+
 model Attendee {
   id               String          @id @default(cuid())
   eventId          String
+  userId
   registrationId   String
-  fullName         String
-  email            String?
   attendeeRole     AttendeeRole?
-  company          String?
   promoSourceCode  PromoSourceCode?
   promoSourceOther String?
-  city             String?
   registeredAt     DateTime        @default(now())
   event            Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
   checkIn          CheckIn?
