@@ -1,0 +1,132 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum EventType {
+  DEMO_DAY
+  NETWORKING
+  TRAINING
+  WORKSHOP
+  OTHER
+}
+
+enum EventStatus {
+  UPCOMING
+  COMPLETED
+}
+
+enum AttendeeRole {
+  FOUNDER
+  INVESTOR
+  MENTOR
+  STUDENT
+  OTHER
+}
+
+enum PromoSourceCode {
+  EMAIL
+  SOCIAL_MEDIA
+  REFERRAL
+  WEBSITE
+  OTHER
+}
+
+model Organization {
+  id        String              @id @default(cuid())
+  name      String
+  isGuest   Boolean             @default(true)
+  createdAt DateTime            @default(now())
+  events    Event[]
+  userId    String?             @unique  
+  sessions  OrganizationSession[]
+}
+
+model OrganizationSession {
+  id             String       @id @default(cuid())
+  tokenHash      String       @unique
+  organizationId String
+  expiresAt      DateTime
+  createdAt      DateTime     @default(now())
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, expiresAt])
+}
+
+model Event {
+  id                  String         @id @default(cuid())
+  organizationId      String
+  name                String
+  eventType           EventType      @default(OTHER)
+  date                String
+  startTime           String
+  timezone            String         @default("UTC")
+  location            String
+  description         String
+  expectedAttendance  Int
+  targetAttendance   Int              @default(0)
+  registrationUrl     String?
+  ticketPrice         Decimal?       @db.Decimal(10, 2)
+  currency            String?
+  status              EventStatus    @default(UPCOMING)
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+  organization        Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  attendees           Attendee[]
+  promoDrafts         PromoDraft[]
+   isPublic            Boolean
+
+  @@index([organizationId, date])
+}
+
+model Attendee {
+  id               String          @id @default(cuid())
+  eventId          String
+  registrationId   String
+  fullName         String
+  email            String?
+  attendeeRole     AttendeeRole?
+  company          String?
+  promoSourceCode  PromoSourceCode?
+  promoSourceOther String?
+  city             String?
+  registeredAt     DateTime        @default(now())
+  event            Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  checkIn          CheckIn?
+
+  @@unique([eventId, registrationId])
+  @@index([eventId, fullName])
+  @@index([eventId, registrationId])
+}
+
+model CheckIn {
+  id          String   @id @default(cuid())
+  attendeeId  String   @unique
+  checkedInAt DateTime @default(now())
+  attendee    Attendee @relation(fields: [attendeeId], references: [id], onDelete: Cascade)
+}
+
+model PromoDraft {
+  id               String     @id @default(cuid())
+  eventId          String
+  parentDraftId    String?
+  targetAudience   String
+  purpose          String
+  tone             String
+  callToAction     String
+  revisionRequest  String?
+  emailSubject     String
+  emailBody        String
+  socialCaption    String
+  editedByUser     Boolean    @default(false)
+  createdAt        DateTime   @default(now())
+  event            Event      @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  parentDraft      PromoDraft? @relation("PromoDraftRevisions", fields: [parentDraftId], references: [id], onDelete: SetNull)
+  revisions        PromoDraft[] @relation("PromoDraftRevisions")
+
+  @@index([eventId, createdAt])
+}
