@@ -12,6 +12,13 @@ import {
 
 type Context = { params: Promise<{ id: string }> };
 
+/**
+ * --- get details about a specific event by id. ---
+ * (endpoint)
+ *  - events/:id (GET) --> returns details about a specific event by id
+ *    ---> returns all event fields. with a nested JSON object of attendees with their user details.
+ * */
+
 export async function GET(_request: Request, { params }: Context) {
   const unavailable = databaseUnavailable();
   if (unavailable) return unavailable;
@@ -33,6 +40,7 @@ export async function GET(_request: Request, { params }: Context) {
         eventType: true,
         date: true,
         startTime: true,
+        endTime: true,
         timezone: true,
         location: true,
         description: true,
