@@ -1,4 +1,4 @@
-# Event planner - AI expert analytics, `infused`
+# Eventrix - AI expert analytics, `infused`
 
 ... `some more meaningful description will pop-up as App build continues` ~!
 
