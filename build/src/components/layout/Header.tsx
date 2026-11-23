@@ -10,7 +10,7 @@ export const Header = () => {
     <header className="border-b border-zinc-200">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 py-4 flex-row items-center justify-between sm:px-6 sm:py-6">
         <Link className="text-xl font-semibold text-zinc-950" href="/">
-          Event Planner
+          Eventrix
         </Link>
         <nav aria-label="Main navigation" className="flex gap-2">
           <Link
