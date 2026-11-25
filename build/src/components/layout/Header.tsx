@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -14,9 +15,10 @@ export const Header = () => {
     <header className="shrink-0 border-b border-border bg-background/80">
       <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between px-5 sm:px-8">
         <Link
-          className="font-heading text-base font-black tracking-tight text-foreground"
           href="/"
+          className="flex items-center gap-2 font-heading text-xl font-black tracking-tight text-foreground"
         >
+          <Image src="/logo.svg" alt="Eventrix logo" width={24} height={24} />
           Eventrix
         </Link>
         <nav aria-label="Main navigation" className="flex gap-2">
