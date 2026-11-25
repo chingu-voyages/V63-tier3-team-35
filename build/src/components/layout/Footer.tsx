@@ -10,8 +10,8 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="border-t border-zinc-200">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-2 px-4 py-5 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <footer className="shrink-0 border-t border-[#dfe3e8] bg-white/80">
+      <div className="mx-auto flex min-h-14 w-full max-w-[1280px] flex-col justify-center gap-1 px-5 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p>© {currentYear} Eventrix</p>
         <a
           className="text-zinc-700 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-950"

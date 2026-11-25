@@ -3,32 +3,43 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { cn } from "@/lib/utils";
+
 export const Header = () => {
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const isResults = pathname === "/results";
 
   return (
-    <header className="border-b border-zinc-200">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-4 px-4 py-4 flex-row items-center justify-between sm:px-6 sm:py-6">
-        <Link className="text-xl font-semibold text-zinc-950" href="/">
+    <header className="shrink-0 border-b border-border bg-background/80">
+      <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between px-5 sm:px-8">
+        <Link
+          className="font-heading text-base font-black tracking-tight text-foreground"
+          href="/"
+        >
           Eventrix
         </Link>
         <nav aria-label="Main navigation" className="flex gap-2">
           <Link
-            className={`rounded-md px-3 py-2 text-sm transition-all duration-200 ease-in-out ${
-              pathname === "/"
-                ? "bg-zinc-900 font-medium text-white"
-                : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
-            }`}
+            aria-current={isHome ? "page" : undefined}
+            className={cn(
+              "rounded-md px-3 py-2 text-sm transition-colors",
+              isHome
+                ? "bg-primary font-medium text-primary-foreground"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground",
+            )}
             href="/"
           >
             Home
           </Link>
           <Link
-            className={`rounded-md px-3 py-2 text-sm transition-all duration-200 ease-in-out ${
-              pathname === "/results" || pathname.startsWith("/results/")
-                ? "bg-zinc-900 font-medium text-white"
-                : "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
-            }`}
+            aria-current={isResults ? "page" : undefined}
+            className={cn(
+              "rounded-md px-3 py-2 text-sm transition-colors",
+              isResults
+                ? "bg-primary font-medium text-primary-foreground"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground",
+            )}
             href="/results"
           >
             Results
