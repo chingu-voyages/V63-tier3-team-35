@@ -6,7 +6,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const features = [
+type Feature = {
+  title: string;
+  description: string;
+};
+
+const features: Feature[] = [
   {
     title: "Real-Time Check-in Tracking",
     description:
@@ -38,12 +43,10 @@ export const FeatureGrid = () => (
         className="gap-1 py-0 border border-border/70 bg-card shadow-none ring-0"
       >
         <CardHeader className="px-3 pt-3 pb-0">
-          <CardTitle className="text-xs leading-tight font-extrabold text-card-foreground">
-            {title}
-          </CardTitle>
+          <CardTitle className="text-xs font-extrabold">{title}</CardTitle>
         </CardHeader>
         <CardContent className="px-3 pt-0 pb-3">
-          <CardDescription className="text-xs leading-relaxed text-muted-foreground">
+          <CardDescription className="text-xs leading-relaxed">
             {description}
           </CardDescription>
         </CardContent>

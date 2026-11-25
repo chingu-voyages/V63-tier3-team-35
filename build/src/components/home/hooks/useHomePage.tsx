@@ -13,7 +13,7 @@ export const useHomePage = () => {
       "guestOrganizer",
       JSON.stringify({ organization, role, dataset }),
     );
-    router.push("/results");
+    router.push("/events");
   };
 
   return {

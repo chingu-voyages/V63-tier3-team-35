@@ -18,6 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
 import { useHomePage } from "./hooks/useHomePage";
 
 export const GuestAccessForm = () => {
@@ -37,7 +38,7 @@ export const GuestAccessForm = () => {
         <CardTitle className="text-sm leading-tight font-black">
           Instant Guest Access
         </CardTitle>
-        <CardDescription className="mt-1 border-b border-border pb-3 text-xs leading-relaxed text-muted-foreground">
+        <CardDescription className="mt-1 border-b border-border pb-3 text-xs leading-relaxed">
           No credit card or permanent signup required for trial
         </CardDescription>
       </CardHeader>
@@ -45,10 +46,7 @@ export const GuestAccessForm = () => {
       <CardContent className="px-5 pt-4 pb-4 sm:px-6">
         <form className="space-y-3" onSubmit={handleSubmit}>
           <div className="space-y-1">
-            <Label
-              htmlFor="organization"
-              className="text-xs font-bold text-foreground"
-            >
+            <Label htmlFor="organization" className="text-xs font-bold">
               Organization Name
             </Label>
             <Input
@@ -57,12 +55,12 @@ export const GuestAccessForm = () => {
               value={organization}
               onChange={(event) => setOrganization(event.target.value)}
               placeholder="Acme Tech Corp"
-              className="h-9 rounded-md bg-background px-2.5 text-xs text-foreground"
+              className="h-9 rounded-md bg-background px-2.5 text-xs"
             />
           </div>
 
           <div className="space-y-1">
-            <Label htmlFor="role" className="text-xs font-bold text-foreground">
+            <Label htmlFor="role" className="text-xs font-bold">
               Your Role
             </Label>
             <Select
@@ -84,7 +82,7 @@ export const GuestAccessForm = () => {
           </div>
 
           <div className="space-y-1.5">
-            <p className="text-xs leading-tight font-bold text-foreground">
+            <p className="text-xs leading-tight font-bold">
               Trial Dataset Option
             </p>
             <RadioGroup
@@ -95,14 +93,14 @@ export const GuestAccessForm = () => {
             >
               <Label
                 htmlFor="dataset-sample"
-                className="flex cursor-pointer items-center gap-2 text-xs leading-relaxed font-normal text-muted-foreground has-[[data-checked]]:text-foreground"
+                className="flex cursor-pointer items-center gap-2 text-xs leading-relaxed text-muted-foreground has-[[data-checked]]:text-foreground"
               >
                 <RadioGroupItem id="dataset-sample" value="sample" />
                 <span>Pre-load sample tech summit data (350+ attendees)</span>
               </Label>
               <Label
                 htmlFor="dataset-empty"
-                className="flex cursor-pointer items-center gap-2 text-xs leading-relaxed font-normal text-muted-foreground has-[[data-checked]]:text-foreground"
+                className="flex cursor-pointer items-center gap-2 text-xs leading-relaxed text-muted-foreground has-[[data-checked]]:text-foreground"
               >
                 <RadioGroupItem id="dataset-empty" value="empty" />
                 <span>Start with empty workspace</span>
@@ -111,13 +109,9 @@ export const GuestAccessForm = () => {
           </div>
 
           <Button type="submit" size="lg" className="h-10 w-full text-xs">
-            ENTER AS GUEST ORGANIZER
+            CONTINUE AS GUEST
           </Button>
         </form>
-
-        <p className="mt-2 mb-0 text-center text-[10px] leading-relaxed text-muted-foreground">
-          Local session stored in browser LocalStorage
-        </p>
       </CardContent>
     </Card>
   );
