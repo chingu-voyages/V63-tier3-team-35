@@ -1,0 +1,139 @@
+{
+  "organizations": [
+    {
+      "id": "seed-org-acme",
+      "name": "Acme Startup Collective",
+      "isGuest": false,
+      "createdAt": "2026-01-10T09:00:00.000Z",
+      "userId": null
+    },
+    {
+      "id": "seed-org-foundry",
+      "name": "The Foundry",
+      "isGuest": false,
+      "createdAt": "2026-01-12T09:00:00.000Z",
+      "userId": null
+    }
+  ],
+  "organizationSessions": [],
+  "users": [
+    {
+      "id": "seed-user-ada",
+      "fullName": "Ada Lovelace",
+      "email": "ada@example.com",
+      "city": "London",
+      "company": "Analytical Engines Ltd"
+    },
+    {
+      "id": "seed-user-grace",
+      "fullName": "Grace Hopper",
+      "email": "grace@example.com",
+      "city": "New York",
+      "company": "COBOL Works"
+    },
+    {
+      "id": "seed-user-alan",
+      "fullName": "Alan Turing",
+      "email": "alan@example.com",
+      "city": "Manchester",
+      "company": null
+    }
+  ],
+  "events": [
+    {
+      "id": "seed-event-demo-day",
+      "organizationId": "seed-org-acme",
+      "name": "Acme Demo Day",
+      "eventType": "DEMO_DAY",
+      "date": "2026-12-05",
+      "startTime": "17:00",
+      "endTime": "19:30",
+      "timezone": "UTC",
+      "location": "Acme HQ, London",
+      "description": "Founders demo their products to investors and mentors.",
+      "expectedAttendance": 80,
+      "targetAttendance": 100,
+      "registrationUrl": "https://example.com/register/demo-day",
+      "ticketPrice": 0,
+      "currency": "USD",
+      "status": "UPCOMING",
+      "isPublic": true,
+      "createdAt": "2026-02-01T10:00:00.000Z",
+      "updatedAt": "2026-02-01T10:00:00.000Z"
+    },
+    {
+      "id": "seed-event-internal-sync",
+      "organizationId": "seed-org-acme",
+      "name": "Acme Internal Portfolio Sync",
+      "eventType": "OTHER",
+      "date": "2026-11-28",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "timezone": "UTC",
+      "location": "Acme HQ, London",
+      "description": "Internal review of portfolio company progress.",
+      "expectedAttendance": 12,
+      "targetAttendance": 12,
+      "registrationUrl": null,
+      "ticketPrice": null,
+      "currency": null,
+      "status": "UPCOMING",
+      "isPublic": false,
+      "createdAt": "2026-02-02T10:00:00.000Z",
+      "updatedAt": "2026-02-02T10:00:00.000Z"
+    },
+    {
+      "id": "seed-event-foundry-mixer",
+      "organizationId": "seed-org-foundry",
+      "name": "The Foundry Networking Mixer",
+      "eventType": "NETWORKING",
+      "date": "2026-12-10",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "timezone": "America/New_York",
+      "location": "The Foundry, New York",
+      "description": "Casual networking for founders and investors in the network.",
+      "expectedAttendance": 50,
+      "targetAttendance": 60,
+      "registrationUrl": "https://example.com/register/foundry-mixer",
+      "ticketPrice": 25,
+      "currency": "USD",
+      "status": "UPCOMING",
+      "isPublic": true,
+      "createdAt": "2026-02-03T10:00:00.000Z",
+      "updatedAt": "2026-02-03T10:00:00.000Z"
+    }
+  ],
+  "attendees": [
+    {
+      "id": "seed-attendee-1",
+      "eventId": "seed-event-demo-day",
+      "userId": "seed-user-ada",
+      "registrationId": "reg-ada-demo-day",
+      "attendeeRole": "FOUNDER",
+      "promoSourceCode": "EMAIL",
+      "promoSourceOther": null,
+      "registeredAt": "2026-02-05T12:00:00.000Z"
+    },
+    {
+      "id": "seed-attendee-2",
+      "eventId": "seed-event-demo-day",
+      "userId": "seed-user-grace",
+      "registrationId": "reg-grace-demo-day",
+      "attendeeRole": "INVESTOR",
+      "promoSourceCode": "REFERRAL",
+      "promoSourceOther": null,
+      "registeredAt": "2026-02-06T12:00:00.000Z"
+    },
+    {
+      "id": "seed-attendee-3",
+      "eventId": "seed-event-foundry-mixer",
+      "userId": "seed-user-alan",
+      "registrationId": "reg-alan-foundry-mixer",
+      "attendeeRole": "MENTOR",
+      "promoSourceCode": "SOCIAL_MEDIA",
+      "promoSourceOther": null,
+      "registeredAt": "2026-02-07T12:00:00.000Z"
+    }
+  ]
+}

@@ -7,10 +7,12 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "db:seed": "tsx src/lib/db/seed.ts"
   },
   "prisma": {
-    "schema": "src/lib/db/schema.prisma"
+    "schema": "src/lib/db/schema.prisma",
+    "seed": "tsx src/lib/db/seed.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -36,7 +38,9 @@
     "eslint-config-next": "16.4.6",
     "prisma": "^6.19.3",
     "tailwindcss": "4.3.3",
-    "typescript": "^5"
+    "tsx": "^4.19.2",
+    "typescript": "^5",
+    "prisma": "^6.19.3"
   },
   "packageManager": "pnpm@10.26.0"
 }
